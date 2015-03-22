@@ -120,19 +120,14 @@
 %==========================================================================
 
 
-%\begin{frame}
-%\frametitle{What?}
-%
-%%\begin{tikzpicture}[remember picture,overlay]
-%%             \fill [write] (current page.south west) rectangle (current page.north east);
-%%             \node at (current page.center) {\includegraphics{people}};
-%%\end{tikzpicture}
-%\begin{textblock*}{8cm}(1.55cm,1.55cm)
-%\includegraphics[width=13cm]{people}
-%\end{textblock*}
-%%\vspace{0in}\includegraphics[width=\paperwidth]{people}
-%The eyes capture light which results in information in the order of 109 bits every second.
-%\end{frame}
+\begin{frame}
+\frametitle{What?}
+\Huge{Saliency}
+
+\begin{itemize}
+\item \large{明显、引入注目}
+\end{itemize}
+\end{frame}
 
 
 \begin{frame}[fragile]
@@ -610,7 +605,7 @@ Almost all the color spaces can be transformed from RGB color space.
 
 \begin{frame}
 \frametitle{What is texture?}
-Texture is actually a very nebulous concept, often attributed to human perception, as either the feel or the appearance of (woven) fabric.\footnote{Mark S.Nixon and Alberto S.Aguado, ``Feature Extraction \& Image Processing for Computer Vision'', Publishing House of Electronics Industry, 2013.}
+{\color{blue}\emph{Texture}} is actually a very nebulous concept, often attributed to human perception, as either the feel or the appearance of (woven) fabric.\footnote{Mark S.Nixon and Alberto S.Aguado, ``Feature Extraction \& Image Processing for Computer Vision'', Publishing House of Electronics Industry, 2013.}
 \end{frame}
 
 %
@@ -822,7 +817,9 @@ S = exp( F + U) \times O
 \frametitle{Energy minization\footnote{Wangjiang Zhu and Shuang Liang, ``Saliency Optimization from Robust Background Detection‘’, in CVPR, 2014.}}
 The ideal output of salient object detection is a clean binary object/background segmentation.
 
-\centering\includegraphics[width=6cm]{optimization}
+\begin{align}
+\underbrace{\sum_{i=1}^{N}w_i^{bg}s_i^2}_{background}+\underbrace{\sum_{i=1}^{N}w_i^{fg}(s_i-1)^2}_{foreground}+\underbrace{\sum_{i, j}w_{ij}(s_i-s_j)^2}_{smoothness}
+\end{align}
 \end{frame}
 
 
