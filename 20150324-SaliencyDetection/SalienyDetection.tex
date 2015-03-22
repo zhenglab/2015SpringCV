@@ -115,7 +115,7 @@
 
 %============================================================================
 
-\section{Introduction}
+\section{Background}
 
 %==========================================================================
 
@@ -170,58 +170,61 @@
 
 \begin{frame}
 \frametitle{What?}
-%\only<1>{
-%  \begin{center}
-%  \begin{figure}
-% \includegraphics[width=0.9\linewidth]{apple1}  
-% \caption{Bottom-Up}
-%  \newline
-%  \usebox{\mysaveboxOne}
-%  \end{figure}
-%  \end{center}}
-%  
-%  \only<2>{
-%  \begin{center}
-%  \begin{figure}
-%  \includegraphics[width=0.9\linewidth]{apple2}
-%  \caption{Top-Down}
-%  \newline
-%  \usebox{\mysaveboxTwo}
-%   \end{figure}
-%  \end{center}}
+\only<1>{
+  \begin{center}
+ \includegraphics[width=0.8\linewidth]{apple1}  
+  \newline
+  \usebox{\mysaveboxOne}
+  \end{center}}
+  
+  \only<2>{
+  \begin{center}
+  \includegraphics[width=0.65\linewidth]{orientation}
+  \newline
+  \usebox{\mysaveboxTwo}
+  \end{center}}
 
-\begin{figure}[!ht]
-  \begin{minipage}[t]{0.46\textwidth}
-  \includegraphics[width=1.8in]{apple1}
-  \caption{Bottom-Up}
-  \end{minipage}
-  \begin{minipage}[t]{0.46\textwidth}
-  \includegraphics[width=1.8in]{apple2}
-  \caption{Top-Down}
-  \end{minipage}
-  \end{figure} 
+ \only<3>{
+  \begin{center}
+  \includegraphics[width=0.8\linewidth]{complex}
+  \newline
+  \usebox{\mysaveboxThree}
+  \end{center}}
+%\begin{figure}[!ht]
+%  \begin{minipage}[t]{0.46\textwidth}
+%  \includegraphics[width=1.8in]{apple1}
+%  \caption{Bottom-Up}
+%  \end{minipage}
+%  \begin{minipage}[t]{0.46\textwidth}
+%  \includegraphics[width=1.8in]{apple2}
+%  \caption{Top-Down}
+%  \end{minipage}
+%  \end{figure} 
 \end{frame}
 
 
 \begin{frame}
 \frametitle{Visual Attention}
-\centering\includegraphics[width=10cm]{VisualAttention}
+\centering\includegraphics[width=11cm]{fields.png}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Origins}
+\frametitle{Theory}
 \begin{itemize}
-\item ``Feature Integration Theory'', Treisman \& Gelade, 1980.
-\item ``Guided Search Theory'', Wolfe \& Cave, 1989.
-\item ``Integrated Competition Theory'', Desimone \& Duncan, 1995.
+\item ``{\color{blue}\emph{Feature Integration Theory}}'', Treisman \& Gelade, 1980.
+\item ``{\color{blue}\emph{Guided Search Theory}}'', Wolfe \& Cave, 1989.
+\item ``{\color{blue}\emph{Integrated Competition Theory}}'', Desimone \& Duncan, 1995.
 \end{itemize}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Origins}
-Koch and Ullman\footnote{C. Koch and S. Ullman, ``Shifts in selective visual attention: towards the underlying neural circuitry'', Human Neurobiology, 1985.} proposed a feed-forward model to combine features and introduced the concept of a saliency map which is a topographic map that represents conspicuousness of scene locations.
+\frametitle{Framework}
+\begin{itemize}
+\item Koch and Ullman\footnote{C. Koch and S. Ullman, ``Shifts in selective visual attention: towards the underlying neural circuitry'', Human Neurobiology, 1985.} proposed a feed-forward model to combine features and introduced the concept of a {\color{blue}\emph{saliency map}} which is a topographic map that represents conspicuousness of scene locations.
+\item Zoom Lens Model\footnote{Eriksen, C.W., J.D. St. James. ``Visual attention within and around the field of focal attention: a zoom lens model'', Perception and Psychophysics, 1986.}
+\end{itemize}
 \end{frame}
 
 
@@ -231,8 +234,10 @@ Koch and Ullman\footnote{C. Koch and S. Ullman, ``Shifts in selective visual att
 \end{frame}
 
 
+\section{Development}
+
 \begin{frame}
-\frametitle{Two Waves}
+\frametitle{Two Waves\footnote{Ali Borji, Ming-Ming Cheng, ``Salient object detection: a survey'', 2014.}}
 \centering\includegraphics[width=10cm]{wave}
 \end{frame}
 
@@ -244,11 +249,68 @@ Fixation prediction models are constructed originally to understand human visual
 \centering\includegraphics[width=8cm]{fixationPrediction.png}
 \end{frame}
 
+
 \begin{frame}
-\frametitle{Representative Method}
+\frametitle{Fixation Prediction：example}
+\only<1>{
+  \begin{center}
+ \includegraphics[width=0.9\linewidth]{movement.png}  
+  \newline
+  \usebox{\mysaveboxOne}
+  \end{center}}
+  
+  \only<2>{
+  \begin{center}
+  \includegraphics[width=0.9\linewidth]{movement1.png}
+  \newline
+  \usebox{\mysaveboxTwo}
+  \end{center}}
+
+ \only<3>{
+  \begin{center}
+  \includegraphics[width=0.9\linewidth]{movement2.png}
+  \newline
+  \usebox{\mysaveboxThree}
+  \end{center}}
+  
+  \only<4>{
+  \begin{center}
+  \includegraphics[width=0.9\linewidth]{movement3.png}
+  \newline
+  \usebox{\mysaveboxFour}
+  \end{center}}
+  
+  \only<5>{
+  \begin{center}
+  \includegraphics[width=0.9\linewidth]{movement4.png}
+  \newline
+  \usebox{\mysaveboxFive}
+  \end{center}}
+  
+  \only<6>{
+  \begin{center}
+  \includegraphics[width=0.9\linewidth]{movement5.png}
+  \newline
+  \usebox{\mysaveboxSix}
+  \end{center}}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Representative Work}
+\begin{columns}
+\begin{column}{\leftmargini}
+\end{column}
+\begin{column}{0.6\linewidth}
 \begin{itemize}
 \item A model of saliency-based visual attention for rapid scene analysis. PAMI 1998, Itti et al.
 \end{itemize}
+\end{column}
+\begin{column}{0.45\linewidth}
+\centering\includegraphics[width=1in]{itti}
+\end{column}
+\end{columns}\vspace{1ex}
+
 \begin{figure}[!ht]
   \begin{minipage}[t]{0.45\textwidth}
   \includegraphics[width=1.8in]{sign}
@@ -274,10 +336,10 @@ Fixation prediction models are constructed originally to understand human visual
 \end{frame}
 
 
-\begin{frame}
-\frametitle{How to evaluate fixation prediction models?}
-\centering\includegraphics[width=10cm]{evaluateFixationModel}
-\end{frame}
+%\begin{frame}
+%\frametitle{How to evaluate fixation prediction models?}
+%\centering\includegraphics[width=10cm]{evaluateFixationModel}
+%\end{frame}
 
 
 \begin{frame}
@@ -310,6 +372,14 @@ Fixation prediction models are constructed originally to understand human visual
 
 
 \begin{frame}
+\frametitle{Latest research achievements}
+\centering\includegraphics[width=6cm]{latest}
+
+  From left to right: PBS\footnote{Chuan Yang et al., ``Graph-regularized saliency detection with convex-hull-based center prior, IEEE Signal Processing Letters, 2013.}、DRFI\footnote{Huaizu Jiang et al., ``Salient object detection: a discriminative regional feature integration approach'', in CVPR, 2013.}、RBD\footnote{Wangjiang Zhu et al., ``Saliency optimization from robust background detection'', in CVPR, 2014.}、HDCT\footnote{Jiwhan Kim et al., ``Salient region detection via high-dimensional color transform'', in CVPR, 2014.}
+\end{frame}
+
+
+\begin{frame}
 \frametitle{Why? }
 The emergence of salient object detection models is driven by the requirement of saliency-based applications.
 \begin{figure}[!ht]
@@ -339,14 +409,6 @@ The emergence of salient object detection models is driven by the requirement of
 \begin{frame}
 \frametitle{What can saliency not do?}
 \centering\includegraphics[width=9cm]{challenge.JPG}
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Latest research achievements}
-\centering\includegraphics[width=6cm]{latest}
-
-  From left to right: PBS\footnote{Chuan Yang et al., ``Graph-regularized saliency detection with convex-hull-based center prior, IEEE Signal Processing Letters, 2013.}、DRFI\footnote{Huaizu Jiang et al., ``Salient object detection: a discriminative regional feature integration approach'', in CVPR, 2013.}、RBD\footnote{Wangjiang Zhu et al., ``Saliency optimization from robust background detection'', in CVPR, 2014.}、HDCT\footnote{Jiwhan Kim et al., ``Salient region detection via high-dimensional color transform'', in CVPR, 2014.}
 \end{frame}
 
 
@@ -415,7 +477,7 @@ Salient object detection: A discriminative regional feature integration approach
 \item Pixel-based
 \begin{itemize}
 \item Contrast: $U_p(x) = \sum_{x'\in I\textbackslash \{ x\}}D(x', x)$
-\item Property: Geometric features、Frequency
+\item Property: Geometric features
 \end{itemize}
 \item Patch/Region/Superpixel-based
 \begin{itemize}
@@ -551,16 +613,16 @@ Almost all the color spaces can be transformed from RGB color space.
 Texture is actually a very nebulous concept, often attributed to human perception, as either the feel or the appearance of (woven) fabric.\footnote{Mark S.Nixon and Alberto S.Aguado, ``Feature Extraction \& Image Processing for Computer Vision'', Publishing House of Electronics Industry, 2013.}
 \end{frame}
 
-
-\begin{frame}
-\frametitle{Texture Descriptor}
-\begin{itemize}
-\item Structural approaches
-\item Statistical approaches
-\item Combination approaches
-\item Local binary patterns
-\end{itemize}
-\end{frame}
+%
+%\begin{frame}
+%\frametitle{Texture Descriptor}
+%\begin{itemize}
+%\item Structural approaches
+%\item Statistical approaches
+%\item Combination approaches
+%\item Local binary patterns
+%\end{itemize}
+%\end{frame}
 
 
 \begin{frame}
