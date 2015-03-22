@@ -1,0 +1,12 @@
+*~
+*.log
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+*.synctex.gz
+*.DS_Store
+tmp
