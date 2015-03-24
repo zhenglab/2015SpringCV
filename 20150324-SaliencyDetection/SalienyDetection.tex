@@ -147,7 +147,7 @@
 
 \begin{frame}
 \frametitle{What?}
-  A rich stream of visual data enters our eyes every second.\footnote{K. Koch and J. McLean, ``How much the eye tells the brain'', Current Biology, 2006. }\newline
+  A rich stream of visual data enters our eyes every second.\footnote{K. Koch \textit{et al.}, ``How much the eye tells the brain'', Current Biology, 2006. }\newline
   
   \pause
   \centering{\Huge \color{blue}{$10^8 \sim 10^9 bits$}}
@@ -175,6 +175,10 @@
 
 \begin{frame}
 \frametitle{Vision as data reduction}
+\begin{columns}
+\begin{column}{\leftmargini}
+\end{column}
+\begin{column}{0.55\linewidth}
 \begin{itemize}
 \item Raw feed from camera/eyes:
 \begin{itemize}
@@ -189,6 +193,13 @@
 \item[-] {\huge \color{blue}$10^{1-2}$} Bytes/s
 \end{itemize}
 \end{itemize}
+\end{column}
+
+\begin{column}{0.45\linewidth}
+\centering\includegraphics[width=1.5in]{friendshipLove}
+\end{column}
+\end{columns}\vspace{1ex}
+
 \end{frame}
 
 
@@ -243,7 +254,7 @@
 \frametitle{Framework}
 \begin{itemize}
 \item Koch and Ullman\footnote{C. Koch and S. Ullman, ``Shifts in selective visual attention: towards the underlying neural circuitry'', Human Neurobiology, 1985.} proposed a feed-forward model to combine features and introduced the concept of a {\color{blue}\emph{saliency map}} which is a topographic map that represents conspicuousness of scene locations.
-\item Zoom Lens Model\footnote{Eriksen, C.W., J.D. St. James. ``Visual attention within and around the field of focal attention: a zoom lens model'', Perception and Psychophysics, 1986.}
+\item Zoom Lens Model\footnote{Eriksen, C. W. and J. D. St. James, ``Visual attention within and around the field of focal attention: a zoom lens model'', Perception and Psychophysics, 1986.}
 \end{itemize}
 \end{frame}
 
@@ -257,7 +268,7 @@
 \section{Development}
 
 \begin{frame}
-\frametitle{Two Waves\footnote{Ali Borji, Ming-Ming Cheng, ``Salient object detection: a survey'', 2014.}}
+\frametitle{Two Waves\footnote{Ali Borji \textit{et al.}, ``Salient object detection: a survey'', 2014.}}
 \centering\includegraphics[width=10cm]{wave}
 \end{frame}
 
@@ -323,7 +334,7 @@ Fixation prediction models are constructed originally to understand human visual
 \end{column}
 \begin{column}{0.6\linewidth}
 \begin{itemize}
-\item A model of saliency-based visual attention for rapid scene analysis. PAMI 1998, Itti et al.
+\item A model of saliency-based visual attention for rapid scene analysis. PAMI 1998, Itti \textit{et al.}.
 \end{itemize}
 \end{column}
 \begin{column}{0.45\linewidth}
@@ -366,8 +377,8 @@ Fixation prediction models are constructed originally to understand human visual
 \frametitle{Salient Object Detection}
 \centering\includegraphics[width=7cm]{FT.png}
 \begin{itemize}
-\item Learning to detect a salient object. CVPR 2007, Tie Liu et al.
-\item Frequency-tuned salient region detection. CVPR 2009, Achanta et al.
+\item Learning to detect a salient object. CVPR 2007, Tie Liu \textit{et al.}.
+\item Frequency-tuned salient region detection. CVPR 2009, Achanta \textit{et al.}.
 \end{itemize}
 \end{frame}
 
@@ -383,10 +394,10 @@ Fixation prediction models are constructed originally to understand human visual
 
 
 \begin{frame}
-\frametitle{Latest research achievements}
+\frametitle{State-of-the-art}
 \centering\includegraphics[width=6cm]{latest}
 
-  From left to right: PBS\footnote{Chuan Yang et al., ``Graph-regularized saliency detection with convex-hull-based center prior, IEEE Signal Processing Letters, 2013.}、DRFI\footnote{Huaizu Jiang et al., ``Salient object detection: a discriminative regional feature integration approach'', in CVPR, 2013.}、RBD\footnote{Wangjiang Zhu et al., ``Saliency optimization from robust background detection'', in CVPR, 2014.}、HDCT\footnote{Jiwhan Kim et al., ``Salient region detection via high-dimensional color transform'', in CVPR, 2014.}
+  From left to right: PBS\footnote{Chuan Yang \textit{et al.}, ``Graph-regularized saliency detection with convex-hull-based center prior, Signal Processing Letters, 2013.}, DRFI\footnote{Huaizu Jiang \textit{et al.}, ``Salient object detection: a discriminative regional feature integration approach'', in CVPR, 2013.}, RBD\footnote{Wangjiang Zhu \textit{et al.}, ``Saliency optimization from robust background detection'', in CVPR, 2014.}, HDCT\footnote{Jiwhan Kim \textit{et al.}, ``Salient region detection via high-dimensional color transform'', in CVPR, 2014.}
 \end{frame}
 
 
@@ -445,43 +456,6 @@ Salient object detection: A discriminative regional feature integration approach
 \end{frame}
 
 
-%\begin{frame}
-%\frametitle{What are features?}
-%An image feature is a general term but it usually means a part of an image that contains interesting details or a property of the image which we are interested in.
-%\begin{columns}
-%\begin{column}{\leftmargini}
-%\end{column}
-%\begin{column}{0.5\linewidth}
-%\centering\includegraphics[width=4cm]{image}
-%\end{column}
-%\begin{column}{0.7\linewidth}
-%\begin{itemize}
-%\item Edges
-%\item Points
-%\item Regions
-%\end{itemize}
-%\end{column}
-%\end{columns}\vspace{1ex}
-%\end{frame}
-
-
-%\begin{frame}
-%\frametitle{Features}
-%\begin{itemize}
-%\item Contrast 
-%\begin{itemize}
-%\item Pixel-based $U_p(x) = \sum_{x'\in I\textbackslash \{ x\}}D(x', x)$
-%\item Region-based $U_r(A_i) = \sum_{1\le k \le N, k \ne i}|\Lambda|D(\Lambda_k, \Lambda_i)$
-%\end{itemize}
-%\item Property
-%\begin{itemize}
-%\item Pixel-based: Geometric features
-%\item Region-based: Geometric features、Appearance features
-%\end{itemize}
-%\end{itemize}
-%\end{frame}
-
-
 \begin{frame}
 \frametitle{Features}
 \begin{itemize}
@@ -493,7 +467,7 @@ Salient object detection: A discriminative regional feature integration approach
 \item Patch/Region/Superpixel-based
 \begin{itemize}
 \item {\color{magenta}Contrast}: $U_r(A_i) = \sum_{1\le k \le N, k \ne i}|\Lambda|D(\Lambda_k, \Lambda_i)$
-\item {\color{magenta}Property}: Geometric features、Appearance features
+\item {\color{magenta}Property}: Geometric features/Appearance features
 \end{itemize}
 \item Multi-scale based
 \end{itemize}
@@ -501,7 +475,7 @@ Salient object detection: A discriminative regional feature integration approach
 
 
 \begin{frame}
-\frametitle{{\color{magenta}\ding{172}} Contrast}
+\frametitle{\ding{172} Contrast}
 \begin{itemize}
 \item Color
 \item Texture
@@ -551,20 +525,20 @@ Salient object detection: A discriminative regional feature integration approach
 
 
 \begin{frame}
-\frametitle{Color Histogram (\color{yellow} \textbf{Demo})}
+\frametitle{Color Histogram\footnote{Huaizu Jiang \textit{et al.}, ``Salient object detection: a discriminative regional feature integration approach'', in CVPR, 2013.} (\color{yellow} \textbf{Demo})}
 \begin{itemize}
-\item 对图像的颜色空间进行量化
-\item 计算矩阵Q
-\item 超像素分割
-\item 对每个超像素区域，依据其中像素点的坐标值，求出对应的矩阵Q中的值
-\item 求区域之间的直方图的对比度
+\item Quantize each color channel to have 16 different values
+\item Compute matrix $Q\_rgb$
+\item Superpixel segmentation
+\item Compute color histogram of each superpixel
+\item Compute color histogram contrast feature of each super pixel
 \end{itemize}
 \end{frame}
 
 
 \begin{frame}
 \frametitle{What is texture?}
-{\color{blue}\emph{Texture}} is actually a very nebulous concept, often attributed to human perception, as either the feel or the appearance of (woven) fabric.\footnote{Mark S.Nixon and Alberto S.Aguado, ``Feature Extraction \& Image Processing for Computer Vision'', Publishing House of Electronics Industry, 2013.}
+{\color{blue}\emph{Texture}} is actually a very nebulous concept, often attributed to human perception, as either the feel or the appearance of (woven) fabric\footnote{Mark S.Nixon and Alberto S.Aguado, ``Feature Extraction \& Image Processing for Computer Vision'', Publishing House of Electronics Industry, 2013.}.
 \begin{figure}[!ht]
   \begin{minipage}[t]{0.35\textwidth}
   \includegraphics[width=1.3in]{texture1.jpg}
@@ -594,7 +568,7 @@ Salient object detection: A discriminative regional feature integration approach
 
 
 \begin{frame}
-\frametitle{LBP(Local Binary Pattern，局部二值模式)}
+\frametitle{LBP (Local Binary Pattern)}
 \centering\includegraphics[width=10cm]{LBP.png}
 \end{frame}
 
@@ -613,7 +587,7 @@ Salient object detection: A discriminative regional feature integration approach
 
 
 \begin{frame}
-\frametitle{{\color{magenta}\ding{173}} Regional property descriptor}
+\frametitle{\ding{173} Regional property descriptor}
 \begin{itemize}
 \item Geometric feature descriptor 
 \begin{itemize}
@@ -647,8 +621,8 @@ Salient object detection: A discriminative regional feature integration approach
 
 
 \begin{frame}
-\frametitle{{\color{magenta}\ding{172}} Center Prior/Location Prior (\color{yellow} \textbf{Demo})}
-{\color{blue}Objects near the image center are more attractive to people.}\footnote{Zhang, Lin and Gu, Zhongyi and Li, Hongyu, ``SDSP: A novel saliency detection method by combining simple priors'', in ICIP, 2013.}
+\frametitle{\ding{172} Center Prior/Location Prior (\color{yellow} \textbf{Demo})}
+{\color{blue}Objects near the image center are more attractive to people}\footnote{Lin Zhang \textit{et al.}, ``SDSP: A novel saliency detection method by combining simple priors'', in ICIP, 2013.}{\color{blue}.}
 
 \vspace{0.15in}
 
@@ -674,14 +648,14 @@ S_D(\textbf{x}) = exp\left(-\frac{||\textbf{x}-\textbf{c}||_2^2}{\sigma_D^2}\rig
 
 
 \begin{frame}
-\frametitle{{\color{magenta}\ding{172}} Center Prior/Location Prior}
-{\color{blue}The salient object in an image is most probably placed near the center of the image.}\footnote{Jiang, Huaizu and Wang, Jingdong, "Automatic salient object segmentation based on context and shape prior", in BMVC, 2011}
+\frametitle{\ding{172} Center Prior/Location Prior}
+{\color{blue}The salient object in an image is most probably placed near the center of the image}\footnote{Huaizu Jiang \textit{et al.}, "Automatic salient object segmentation based on context and shape prior", in BMVC, 2011}{\color{blue}.}
 
 \vspace{0.2in}
 
 Gaussian falloff weight:
 \begin{align}
-w_i^{(n)} = exp(-9(dx_i^{(n)})^2/w^2-9(dy_i^{(n)})^2/h^2
+w_i^{(n)} = exp\left(-9\frac{(dx_i^{(n)})^2}{w^2}-9\frac{(dy_i^{(n)})^2}{h^2}\right)
 \end{align}
 
 \centering\includegraphics[width=3cm]{CBcolorPrior.png}
@@ -689,8 +663,8 @@ w_i^{(n)} = exp(-9(dx_i^{(n)})^2/w^2-9(dy_i^{(n)})^2/h^2
 
 
 \begin{frame}
-\frametitle{{\color{magenta}\ding{172}} Center Prior/Location Prior}
-Assigning higher saliency to the image elements near the image center becomes invalid when the objects are placed far off the image center\footnote{Yang, Chuan and Zhang, Lihe and Lu, Huchuan, ``Graph-regularized saliency detection with convex-hull-based center prior'', in Signal Processing Letters, IEEE, 2013}.
+\frametitle{\ding{172} Center Prior/Location Prior}
+Assigning higher saliency to the image elements near the image center becomes invalid when the objects are placed far off the image center\footnote{Chuan Yang \textit{et al.}, ``Graph-regularized saliency detection with convex-hull-based center prior'', Signal Processing Letters, 2013.}.
 \begin{columns}
 \begin{column}{\leftmargini}
 \end{column}
@@ -708,16 +682,16 @@ Assigning higher saliency to the image elements near the image center becomes in
 
 
 \begin{frame}
-\frametitle{{\color{magenta}\ding{173}} Backgroundness Prior}
-{\color{blue}\emph{Backgroundness prior}} is more general than center prior because salient objects can be placed off the center, but they seldom touch the image boundary.\footnote{Wei, Yichen and Wen, Fang and Zhu, Wangjiang, ``Geodesic saliency using background priors'', in ECCV, 2012.}
+\frametitle{\ding{173} Backgroundness Prior}
+{\color{blue}\emph{Backgroundness prior}} is more general than center prior because salient objects can be placed off the center, but they seldom touch the image boundary\footnote{Yichen Wei \textit{et al.}, ``Geodesic saliency using background priors'', in ECCV, 2012.}.
 \begin{itemize}
-\item Assuming that a narrow border of the image is background region, regional saliency can be computer as the contrast versus ``background''.
+\item Assuming that a narrow border of the image is background region, regional saliency can be computed as the contrast versus ``background''.
 \end{itemize}
 \vspace{0.3in}
 \end{frame}
 
 \begin{frame}
-\frametitle{{\color{magenta}\ding{173}} Backgroundness Prior (\color{yellow} \textbf{Demo})}
+\frametitle{\ding{173} Backgroundness Prior (\color{yellow} \textbf{Demo})}
 \centering\includegraphics[width=0.7\textwidth]{GS.png}
 
 \begin{align}
@@ -727,8 +701,8 @@ s.t.(P_i, P_{i+1})\in \varepsilon \nonumber
 \end{frame}
 
 \begin{frame}
-\frametitle{{\color{magenta}\ding{174}} Boundary Connectivity Prior}
-{\color{blue}Object regions are much less connected to image boundaries than background ones.}\footnote{Zhu, Wangjiang and Liang, Shuang, ``Saliency optimization from robust background detection'', in CVPR, 2014.}
+\frametitle{\ding{174} Boundary Connectivity Prior}
+{\color{blue}Object regions are much less connected to image boundaries than background ones}\footnote{Wangjiang Zhu \textit{et al.}, ``Saliency optimization from robust background detection'', in CVPR, 2014.}{\color{blue}.}
 
 \centering\includegraphics[width=4cm]{wCtr.png}
 
@@ -740,10 +714,10 @@ BndCon(R) = \frac{|\{p|p\in R, p\in Bnd\}|}{\sqrt{|\{p|p\in R\}|}}
 
 
 \begin{frame}
-\frametitle{{\color{magenta}\ding{175}} Color Prior (\color{yellow} \textbf{Demo})}
-{\color{blue}Warm colors, such as red and yellow, are more pronounced to the human visual system than cold colors, such as green and blue.}\footnote{Zhang, Lin and Gu, Zhongyi and Li, Hongyu, ``SDSP: A novel saliency detection method by combining simple priors'', in ICIP, 2013.}
+\frametitle{\ding{175} Color Prior (\color{yellow} \textbf{Demo})}
+{\color{blue}Warm colors, such as red and yellow, are more pronounced to the human visual system than cold colors, such as green and blue}\footnote{Lin Zhang \textit{et al.}, ``SDSP: A novel saliency detection method by combining simple priors'', in ICIP, 2013.}{\color{blue}.}
 \begin{align}
-f_{an}(\textbf{x}) & =\frac{f_a(x)-mina}{maxa-mina}, f_{bn}(\textbf{x}) = \frac{f_b(x)-minb}{maxb-minb}\\
+f_{an}(\textbf{x}) & =\frac{f_a(x)-min(a)}{max(a)-min(a)}, f_{bn}(\textbf{x}) = \frac{f_b(x)-min(b)}{max(b)-min(b)}\\
 S_c(\textbf{x}) & = 1-exp\left(-\frac{f_{an}^2(\textbf{x})+f_{bn}^2(\textbf{x})}{\sigma_c^2}\right)
 \end{align}
 \begin{itemize}
@@ -754,11 +728,11 @@ S_c(\textbf{x}) & = 1-exp\left(-\frac{f_{an}^2(\textbf{x})+f_{bn}^2(\textbf{x})}
 
 
 \begin{frame}
-\frametitle{{\color{magenta}\ding{176}} Objectness Prior}
-{\color{blue}\emph{Objectness}} is defined as the probability of there being a complete object in a local window centered on each pixel.\footnote{Jiang, Peng and Ling, Haibin, ``Salient region detection by ufo: uniqueness, focusness and objectness'', in ICCV, 2013} 
+\frametitle{\ding{176} Objectness Prior}
+{\color{blue}\emph{Objectness}} is defined as the probability of there being a complete object in a local window centered on each pixel\footnote{Peng Jiang \textit{et al.}, ``Salient region detection by ufo: uniqueness, focusness and objectness'', in ICCV, 2013.}.
 \begin{itemize}
 \item Randomly sample $N$ windows over the image 
-\item Assign each window $w$ a probability score $P(w)$ to indicate its objectless
+\item Assign each window $w$ a probability score $P(w)$ to indicate its objectness
 \item Sum all the probability scores in windows that contains pixel $x$
 \end{itemize}
 \begin{align}
@@ -768,8 +742,8 @@ O_p(x) = \sum_{w \in W \text{ }and \text{ } x \in w} P(W_x)
 
 
 \begin{frame}
-\frametitle{{\color{magenta}\ding{177}} Smoothness Prior}
-{\color{blue}\emph{Smoothness}} constraint is often encoded by adding a pair-wise potential to the energy function which encourages neighboring pixels in the image to take the same label.\footnote{Yang, Chuan and Zhang, Lihe and Lu, Huchuan, ``Graph-regularized saliency detection with convex-hull-based center prior'', in Signal Processing Letters, IEEE, 2013.}
+\frametitle{\ding{177} Smoothness Prior}
+{\color{blue}\emph{Smoothness}} constraint is often encoded by adding a pair-wise potential to the energy function which encourages neighboring pixels in the image to take the same label\footnote{Chuan Yang \textit{et al.}, ``Graph-regularized saliency detection with convex-hull-based center prior'', Signal Processing Letters, 2013.}.
 \begin{align}
 w_{ij} & = exp\left(-\frac{||c_i-c_j||}{2\sigma_w^2}\right)\\
 E(S) & = \sum_{i}(S(i)-S_{in}(i))^2+\lambda \sum_{i, j}w_{ij}(S(i)-S(j))^2
@@ -778,13 +752,13 @@ E(S) & = \sum_{i}(S(i)-S_{in}(i))^2+\lambda \sum_{i, j}w_{ij}(S(i)-S(j))^2
 
 
 \begin{frame}
-\frametitle{{\color{magenta}\ding{177}} Smoothness Prior}
+\frametitle{\ding{177} Smoothness Prior}
 \centering\includegraphics[width=10cm]{smoothness}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Example: SDSP\footnote{Zhang, Lin and Gu, Zhongyi and Li, Hongyu, ``SDSP: A novel saliency detection method by combining simple priors'', in ICIP, 2013.}   (\color{yellow} \textbf{Demo})}
+\frametitle{Example: SDSP\footnote{Lin Zhang \textit{et al.}, ``SDSP: A novel saliency detection method by combining simple priors'', in ICIP, 2013.}   (\color{yellow} \textbf{Demo})}
 
 \centering\includegraphics[width=5.7cm]{SDSP}
 \end{frame}
@@ -793,7 +767,7 @@ E(S) & = \sum_{i}(S(i)-S_{in}(i))^2+\lambda \sum_{i, j}w_{ij}(S(i)-S(j))^2
 \section{Aggregation}
 
 \begin{frame}
-\frametitle{{\color{magenta}\ding{172}} Non-linear\footnote{Peng Jiang et al., ``Salient region detection by ufo: Uniqueness, focusness and objectness'', in ICCV, 2013. }}
+\frametitle{\ding{172} Non-linear\footnote{Peng Jiang \textit{et al.}, ``Salient region detection by ufo: uniqueness, focusness and objectness'', in ICCV, 2013. }}
 Combining the focusness, the objectness and the uniqueness maps:
 \begin{align}
 S = exp( F + U) \times O
@@ -802,7 +776,7 @@ S = exp( F + U) \times O
 
 
 \begin{frame}
-\frametitle{{\color{magenta}\ding{173}} Energy minization\footnote{Wangjiang Zhu and Shuang Liang, ``Saliency Optimization from Robust Background Detection‘’, in CVPR, 2014.}}
+\frametitle{\ding{173} Energy minization\footnote{Wangjiang Zhu \textit{et al.}, ``Saliency optimization from robust background detection'', in CVPR, 2014.}}
 The ideal output of salient object detection is a clean binary object/background segmentation.
 
 \begin{align}
@@ -812,7 +786,7 @@ The ideal output of salient object detection is a clean binary object/background
 
 
 \begin{frame}
-\frametitle{{\color{magenta}\ding{174}} Machine Learning\footnote{Huaizu Jiang et al., ``Salient object detection: a discriminative regional feature integration approach'', in CVPR, 2013.}}
+\frametitle{\ding{174} Machine Learning\footnote{Huaizu Jiang \textit{et al.}, ``Salient object detection: a discriminative regional feature integration approach'', in CVPR, 2013.}}
 Training examples: 
 \begin{itemize}
 \item a set of confident regions $R = \{ R_1, R_2, \ldots, R_Q\}$
