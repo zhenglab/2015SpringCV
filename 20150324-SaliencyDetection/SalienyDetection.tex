@@ -22,6 +22,7 @@
 \usepackage[americaninductors,europeanresistors]{circuitikz}
 \usepackage{tikz}
 \usepackage{fancybox}     %% 定义zhushadow时用到
+\usepackage{pifont} %ding用到
 \newsavebox{\mysaveboxOne}  %%为了在only中使用lstlisting
 \newsavebox{\mysaveboxTwo}
 \newsavebox{\mysaveboxThree}
@@ -120,51 +121,79 @@
 %==========================================================================
 
 
-\begin{frame}
+\begin{frame}[fragile]
 \frametitle{What?}
-\Huge{Saliency}
+\begin{columns}
+\begin{column}{\leftmargini}
+\end{column}
+\begin{column}{0.5\linewidth}
+\huge{Saliency(显著)}
 
 \begin{itemize}
 \item \large{明显、引入注目}
 \end{itemize}
-\end{frame}
-
-
-\begin{frame}[fragile]
-  \frametitle{What?}
-  \only<1>{
-  A rich stream of visual data ($10^8-10^9$ bits) enters our eyes every second.\footnote{K. Koch and J. McLean, ``How much the eye tells the brain'', Current Biology, 2006. }
-  \newline
-  \usebox{\mysaveboxOne}
-  }
-  
-  \only<2>{
-  \begin{center}
-  \includegraphics[width=1\linewidth]{tuxiang.png}
-  \newline
-  \usebox{\mysaveboxTwo}
-  \end{center}}
-  
-   \only<3>{
-  \begin{center}
-  \begin{align}
-  500 \times 375 \times 3 \times 8 = 4500000 bit\nonumber
-  \end{align}
-  \newline
-  \usebox{\mysaveboxThree}
-  \end{center}}
-  
-  \only<4>{
-  \begin{center}
-  \includegraphics[width=1\linewidth]{people}
-  \newline
-  \usebox{\mysaveboxFour}
-  \end{center}}
+\end{column}
+\pause
+\begin{column}{0.16\linewidth}
+\huge $\Longleftarrow$ 
+\end{column}
+\pause
+\begin{column}{0.3\linewidth}
+ \centering{\huge \color{blue}{Visual Attention}}
+\end{column}
+\end{columns}\vspace{1ex}
 \end{frame}
 
 
 \begin{frame}
 \frametitle{What?}
+  A rich stream of visual data enters our eyes every second.\footnote{K. Koch and J. McLean, ``How much the eye tells the brain'', Current Biology, 2006. }\newline
+  
+  \pause
+  \centering{\Huge \color{blue}{$10^8 \sim 10^9 bits$}}
+\end{frame}
+  
+  
+\begin{frame}
+  \frametitle{What?}
+  \begin{center}
+  \includegraphics[width=0.85\linewidth]{tuxiang.png}
+  \end{center}
+  
+  \pause
+  \centering{\huge $500 \times 375 \times 3 \times 8 = {\color{blue}4500000} bits$}
+\end{frame}
+
+  
+\begin{frame}
+\frametitle{What?}
+  \begin{center}
+  \includegraphics[width=1\linewidth]{people}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Vision as data reduction}
+\begin{itemize}
+\item Raw feed from camera/eyes:
+\begin{itemize}
+\item[-] {\huge \color{blue}$10^{7-9}$} Bytes/s
+\end{itemize}
+\item Extraction of edges and salient features
+\begin{itemize}
+\item[-] {\huge \color{blue}$10^{3-4}$} Bytes/s
+\end{itemize}
+\item High-level interpretation of scene
+\begin{itemize}
+\item[-] {\huge \color{blue}$10^{1-2}$} Bytes/s
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Visual Attention}
 \only<1>{
   \begin{center}
  \includegraphics[width=0.8\linewidth]{apple1}  
@@ -185,22 +214,18 @@
   \newline
   \usebox{\mysaveboxThree}
   \end{center}}
-%\begin{figure}[!ht]
-%  \begin{minipage}[t]{0.46\textwidth}
-%  \includegraphics[width=1.8in]{apple1}
-%  \caption{Bottom-Up}
-%  \end{minipage}
-%  \begin{minipage}[t]{0.46\textwidth}
-%  \includegraphics[width=1.8in]{apple2}
-%  \caption{Top-Down}
-%  \end{minipage}
-%  \end{figure} 
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Bottom-up vs Top-down}
+\centering\includegraphics[width=9cm]{BottomupTopdown.png}
 \end{frame}
 
 
 \begin{frame}
 \frametitle{Visual Attention}
-\centering\includegraphics[width=11cm]{fields.png}
+\centering\includegraphics[width=10cm]{fields.png}
 \end{frame}
 
 
@@ -324,11 +349,11 @@ Fixation prediction models are constructed originally to understand human visual
 \end{figure}
 \end{frame}
 
-
-\begin{frame}
-\frametitle{General Procedure of fixation prediction models}
-\centering\includegraphics[width=10cm]{fixationArchitecture}
-\end{frame}
+%
+%\begin{frame}
+%\frametitle{General Procedure of fixation prediction models}
+%\centering\includegraphics[width=10cm]{fixationArchitecture}
+%\end{frame}
 
 
 %\begin{frame}
@@ -348,20 +373,11 @@ Fixation prediction models are constructed originally to understand human visual
 
 
 %\begin{frame}
-%\frametitle{Salient Object Detection}
-%Salient object detection is widely defined as capturing the uniqueness, distinctiveness, or rarity of a scene.
-%
-%\begin{textblock*}{10cm}(2cm,2cm)
-%\rowcolors[]{1}{blue!20}{blue!10}
-%\begin{tabular}{ccc}
-%\multicolumn{3}{c}{Uniqueness}\\
-%Local Contrast & Global Contrast & Multi-scale Contrast 
-%\end{tabular}
-%\end{textblock*}
-%
+%\frametitle{FT (\color{yellow} \textbf{Demo})}
+%\centering\includegraphics[width=7cm]{FT.png}
 %\begin{itemize}
-%\item Pixel-based 
-%\item Region-based
+%\item Learning to detect a salient object. CVPR 2007, Tie Liu et al.
+%\item Frequency-tuned salient region detection. CVPR 2009, Achanta et al.
 %\end{itemize}
 %\end{frame}
 
@@ -476,8 +492,8 @@ Salient object detection: A discriminative regional feature integration approach
 \end{itemize}
 \item Patch/Region/Superpixel-based
 \begin{itemize}
-\item Contrast: $U_r(A_i) = \sum_{1\le k \le N, k \ne i}|\Lambda|D(\Lambda_k, \Lambda_i)$
-\item Property: Geometric features、Appearance features
+\item {\color{magenta}Contrast}: $U_r(A_i) = \sum_{1\le k \le N, k \ne i}|\Lambda|D(\Lambda_k, \Lambda_i)$
+\item {\color{magenta}Property}: Geometric features、Appearance features
 \end{itemize}
 \item Multi-scale based
 \end{itemize}
@@ -485,7 +501,7 @@ Salient object detection: A discriminative regional feature integration approach
 
 
 \begin{frame}
-\frametitle{Contrast}
+\frametitle{{\color{magenta}\ding{172}} Contrast}
 \begin{itemize}
 \item Color
 \item Texture
@@ -525,25 +541,17 @@ Salient object detection: A discriminative regional feature integration approach
 
 
 \begin{frame}
-\frametitle{Device-dependent spaces}
+\frametitle{Color Space}
 \begin{itemize}
-\item RGB、CMYK
+\item RGB
+\item Lab
+\item HSV
 \end{itemize}
-
-\centering\includegraphics[width=7cm]{RGB_CMYK.png}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Transformation}
-Almost all the color spaces can be transformed from RGB color space.
-
-\centering\includegraphics[width=8cm]{ColorSpaceTransform}
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Color Histogram}
+\frametitle{Color Histogram (\color{yellow} \textbf{Demo})}
 \begin{itemize}
 \item 对图像的颜色空间进行量化
 \item 计算矩阵Q
@@ -554,58 +562,23 @@ Almost all the color spaces can be transformed from RGB color space.
 \end{frame}
 
 
-%\begin{frame}
-%\frametitle{Edges}
-%Edges are points that are at the boundary of two image regions and are detected by computing the change in brightness.
-%
-%\centering\includegraphics[width=8cm]{edge}
-%\end{frame}
-%
-%
-%\begin{frame}
-%\frametitle{Corners/interest points}
-%A corner is the point located at the intersection of two edges and you can think of an interest point as a small region in the image(window) for which no matter in which neighboring direction you look there is a high variations in brightness.
-%
-%\centering\includegraphics[width=5cm]{corner}
-%\end{frame}
-%
-%
-%\begin{frame}
-%\frametitle{Blobs/regions of interest}
-%Blobs, or regions of interest, are regions where the brightness or color of the points change very little so they can be considered in some sense to be similar to each other.
-%
-%\centering\includegraphics[width=6cm]{blob}
-%\end{frame}
-%
-%
-%\begin{frame}
-%\frametitle{\emph{feature} vs \emph{feature descriptor}}
-%\begin{description}
-%\item[Feature detection] A low-level image processing operation and it examines every pixel to see if the region around that pixel could be used as a feature.
-%\item[Feature description] Once the features that are interesting to us have been detected, they can be extracted. The result is known as a feature descriptor or feature vector and they characterize the region around the key point.
-%\end{description}
-%\end{frame}
-%
-%
-%\begin{frame}
-%\frametitle{Feature Descriptor}
-%\begin{itemize}
-%\item Invariance
-%\item Distinguishability
-%\end{itemize}
-%SIFT、、
-%\end{frame}
-%
-%
-%\begin{frame}
-%\frametitle{Steps}
-%\centering\includegraphics[width=10cm]{steps}
-%\end{frame}
-
-
 \begin{frame}
 \frametitle{What is texture?}
 {\color{blue}\emph{Texture}} is actually a very nebulous concept, often attributed to human perception, as either the feel or the appearance of (woven) fabric.\footnote{Mark S.Nixon and Alberto S.Aguado, ``Feature Extraction \& Image Processing for Computer Vision'', Publishing House of Electronics Industry, 2013.}
+\begin{figure}[!ht]
+  \begin{minipage}[t]{0.35\textwidth}
+  \includegraphics[width=1.3in]{texture1.jpg}
+  \end{minipage}
+  \begin{minipage}[t]{0.35\textwidth}
+  \includegraphics[width=1.3in]{texture2.jpg}
+  \end{minipage}
+  \begin{minipage}[t]{0.35\textwidth}
+  \includegraphics[width=1.3in]{texture3.jpg}
+  \end{minipage}
+  \begin{minipage}[t]{0.35\textwidth}
+  \includegraphics[width=1.3in]{texture4.jpg}
+  \end{minipage}
+  \end{figure} 
 \end{frame}
 
 %
@@ -640,7 +613,7 @@ Almost all the color spaces can be transformed from RGB color space.
 
 
 \begin{frame}
-\frametitle{Regional property descriptor}
+\frametitle{{\color{magenta}\ding{173}} Regional property descriptor}
 \begin{itemize}
 \item Geometric feature descriptor 
 \begin{itemize}
@@ -662,19 +635,19 @@ Almost all the color spaces can be transformed from RGB color space.
 
 \begin{frame}
 \frametitle{Priors}
-\begin{itemize}
+\begin{enumerate}
 \item Center Prior/Location Prior
 \item Backgroundness Prior
 \item Boundary Connectivity Prior
 \item Color Prior
 \item Objectness Prior
 \item Smoothness Prior
-\end{itemize}
+\end{enumerate}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Center Prior/Location Prior}
+\frametitle{{\color{magenta}\ding{172}} Center Prior/Location Prior (\color{yellow} \textbf{Demo})}
 {\color{blue}Objects near the image center are more attractive to people.}\footnote{Zhang, Lin and Gu, Zhongyi and Li, Hongyu, ``SDSP: A novel saliency detection method by combining simple priors'', in ICIP, 2013.}
 
 \vspace{0.15in}
@@ -701,7 +674,7 @@ S_D(\textbf{x}) = exp\left(-\frac{||\textbf{x}-\textbf{c}||_2^2}{\sigma_D^2}\rig
 
 
 \begin{frame}
-\frametitle{Center Prior/Location Prior}
+\frametitle{{\color{magenta}\ding{172}} Center Prior/Location Prior}
 {\color{blue}The salient object in an image is most probably placed near the center of the image.}\footnote{Jiang, Huaizu and Wang, Jingdong, "Automatic salient object segmentation based on context and shape prior", in BMVC, 2011}
 
 \vspace{0.2in}
@@ -716,7 +689,7 @@ w_i^{(n)} = exp(-9(dx_i^{(n)})^2/w^2-9(dy_i^{(n)})^2/h^2
 
 
 \begin{frame}
-\frametitle{Center Prior/Location Prior}
+\frametitle{{\color{magenta}\ding{172}} Center Prior/Location Prior}
 Assigning higher saliency to the image elements near the image center becomes invalid when the objects are placed far off the image center\footnote{Yang, Chuan and Zhang, Lihe and Lu, Huchuan, ``Graph-regularized saliency detection with convex-hull-based center prior'', in Signal Processing Letters, IEEE, 2013}.
 \begin{columns}
 \begin{column}{\leftmargini}
@@ -735,7 +708,7 @@ Assigning higher saliency to the image elements near the image center becomes in
 
 
 \begin{frame}
-\frametitle{Backgroundness Prior}
+\frametitle{{\color{magenta}\ding{173}} Backgroundness Prior}
 {\color{blue}\emph{Backgroundness prior}} is more general than center prior because salient objects can be placed off the center, but they seldom touch the image boundary.\footnote{Wei, Yichen and Wen, Fang and Zhu, Wangjiang, ``Geodesic saliency using background priors'', in ECCV, 2012.}
 \begin{itemize}
 \item Assuming that a narrow border of the image is background region, regional saliency can be computer as the contrast versus ``background''.
@@ -743,9 +716,18 @@ Assigning higher saliency to the image elements near the image center becomes in
 \vspace{0.3in}
 \end{frame}
 
+\begin{frame}
+\frametitle{{\color{magenta}\ding{173}} Backgroundness Prior (\color{yellow} \textbf{Demo})}
+\centering\includegraphics[width=0.7\textwidth]{GS.png}
+
+\begin{align}
+saliency(P) = \min_{P_1=P, P_2, \ldots, P_n=B}\sum_{i=1}^{n-1}weight(P_i, P_{i+1}), \\
+s.t.(P_i, P_{i+1})\in \varepsilon \nonumber
+\end{align}
+\end{frame}
 
 \begin{frame}
-\frametitle{Boundary Connectivity Prior}
+\frametitle{{\color{magenta}\ding{174}} Boundary Connectivity Prior}
 {\color{blue}Object regions are much less connected to image boundaries than background ones.}\footnote{Zhu, Wangjiang and Liang, Shuang, ``Saliency optimization from robust background detection'', in CVPR, 2014.}
 
 \centering\includegraphics[width=4cm]{wCtr.png}
@@ -758,7 +740,7 @@ BndCon(R) = \frac{|\{p|p\in R, p\in Bnd\}|}{\sqrt{|\{p|p\in R\}|}}
 
 
 \begin{frame}
-\frametitle{Color Prior}
+\frametitle{{\color{magenta}\ding{175}} Color Prior (\color{yellow} \textbf{Demo})}
 {\color{blue}Warm colors, such as red and yellow, are more pronounced to the human visual system than cold colors, such as green and blue.}\footnote{Zhang, Lin and Gu, Zhongyi and Li, Hongyu, ``SDSP: A novel saliency detection method by combining simple priors'', in ICIP, 2013.}
 \begin{align}
 f_{an}(\textbf{x}) & =\frac{f_a(x)-mina}{maxa-mina}, f_{bn}(\textbf{x}) = \frac{f_b(x)-minb}{maxb-minb}\\
@@ -772,7 +754,7 @@ S_c(\textbf{x}) & = 1-exp\left(-\frac{f_{an}^2(\textbf{x})+f_{bn}^2(\textbf{x})}
 
 
 \begin{frame}
-\frametitle{Objectness Prior}
+\frametitle{{\color{magenta}\ding{176}} Objectness Prior}
 {\color{blue}\emph{Objectness}} is defined as the probability of there being a complete object in a local window centered on each pixel.\footnote{Jiang, Peng and Ling, Haibin, ``Salient region detection by ufo: uniqueness, focusness and objectness'', in ICCV, 2013} 
 \begin{itemize}
 \item Randomly sample $N$ windows over the image 
@@ -786,17 +768,23 @@ O_p(x) = \sum_{w \in W \text{ }and \text{ } x \in w} P(W_x)
 
 
 \begin{frame}
-\frametitle{Smoothness Prior}
+\frametitle{{\color{magenta}\ding{177}} Smoothness Prior}
 {\color{blue}\emph{Smoothness}} constraint is often encoded by adding a pair-wise potential to the energy function which encourages neighboring pixels in the image to take the same label.\footnote{Yang, Chuan and Zhang, Lihe and Lu, Huchuan, ``Graph-regularized saliency detection with convex-hull-based center prior'', in Signal Processing Letters, IEEE, 2013.}
 \begin{align}
 w_{ij} & = exp\left(-\frac{||c_i-c_j||}{2\sigma_w^2}\right)\\
-E(S) & = \sum_{i}(S(i)-S_in(i))^2+\lambda \sum_{i, j}w_{ij}(S(i)-S(j))^2
+E(S) & = \sum_{i}(S(i)-S_{in}(i))^2+\lambda \sum_{i, j}w_{ij}(S(i)-S(j))^2
 \end{align}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Example: SDSP\footnote{Zhang, Lin and Gu, Zhongyi and Li, Hongyu, ``SDSP: A novel saliency detection method by combining simple priors'', in ICIP, 2013.}}
+\frametitle{{\color{magenta}\ding{177}} Smoothness Prior}
+\centering\includegraphics[width=10cm]{smoothness}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Example: SDSP\footnote{Zhang, Lin and Gu, Zhongyi and Li, Hongyu, ``SDSP: A novel saliency detection method by combining simple priors'', in ICIP, 2013.}   (\color{yellow} \textbf{Demo})}
 
 \centering\includegraphics[width=5.7cm]{SDSP}
 \end{frame}
@@ -805,7 +793,7 @@ E(S) & = \sum_{i}(S(i)-S_in(i))^2+\lambda \sum_{i, j}w_{ij}(S(i)-S(j))^2
 \section{Aggregation}
 
 \begin{frame}
-\frametitle{Non-linear\footnote{Peng Jiang et al., ``Salient region detection by ufo: Uniqueness, focusness and objectness'', in ICCV, 2013. }}
+\frametitle{{\color{magenta}\ding{172}} Non-linear\footnote{Peng Jiang et al., ``Salient region detection by ufo: Uniqueness, focusness and objectness'', in ICCV, 2013. }}
 Combining the focusness, the objectness and the uniqueness maps:
 \begin{align}
 S = exp( F + U) \times O
@@ -814,7 +802,7 @@ S = exp( F + U) \times O
 
 
 \begin{frame}
-\frametitle{Energy minization\footnote{Wangjiang Zhu and Shuang Liang, ``Saliency Optimization from Robust Background Detection‘’, in CVPR, 2014.}}
+\frametitle{{\color{magenta}\ding{173}} Energy minization\footnote{Wangjiang Zhu and Shuang Liang, ``Saliency Optimization from Robust Background Detection‘’, in CVPR, 2014.}}
 The ideal output of salient object detection is a clean binary object/background segmentation.
 
 \begin{align}
@@ -824,7 +812,7 @@ The ideal output of salient object detection is a clean binary object/background
 
 
 \begin{frame}
-\frametitle{Machine Learning\footnote{Huaizu Jiang et al., ``Salient object detection: a discriminative regional feature integration approach'', in CVPR, 2013.}}
+\frametitle{{\color{magenta}\ding{174}} Machine Learning\footnote{Huaizu Jiang et al., ``Salient object detection: a discriminative regional feature integration approach'', in CVPR, 2013.}}
 Training examples: 
 \begin{itemize}
 \item a set of confident regions $R = \{ R_1, R_2, \ldots, R_Q\}$
