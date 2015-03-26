@@ -247,13 +247,13 @@ A simple dataset can be downloaded from the website\footnote{\url{http://researc
 \subsection{Step 1: Extract image information (15 points)}
 
 \begin{description}
-\item[Input] The input color image (a $m \times n \times 3$ matrix), $m$ is the width of the input image, $n$ is the length of the input image.
-\item[Output] A $m \times n$ matrix. 
-\item[Implementation] This step is based on the regional feature you choose in step 3, you have two choices:
+\item[Input] The input color image ($m \times n \times 3$ matrix), $m$ is the width of the input image, $n$ is the height of the input image.
+\item[Output] $m \times n$ matrix. 
+\item[Implementation] This step determines the regional feature you want to use in step 3, and you have two choices (choose at least one feature for this assignment):
 \begin{itemize}
 \item Color information
 \begin{itemize}
-\item[-] You should quantify each color channel to have less number of values, then compute a value instead of a vector to represent the color of each pixel. 
+\item[-] You should quantize each color channel (RGB) to reduce the number of colors (such as from $256$ to $16$), then compute a value instead of the $(r,g,b)$ to represent the color of each pixel. 
 \end{itemize}
 \item Texture information
 \begin{itemize}
