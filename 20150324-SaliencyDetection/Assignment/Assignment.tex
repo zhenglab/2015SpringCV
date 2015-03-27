@@ -233,7 +233,7 @@ The whole framework of the implementation for salient object detection is shown 
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.4\textwidth]{framework.eps}
+\includegraphics[width=0.6\textwidth]{framework.eps}
 \caption{Framework of the implementation for salient object detection.}
 \label{fig: framework}
 \end{figure}
@@ -242,12 +242,12 @@ The whole framework of the implementation for salient object detection is shown 
 
 A simple dataset can be downloaded from the website\footnote{\url{http://research.microsoft.com/en-us/um/people/jiansun/SalientObject/salient_object.htm}}. Pick one or several images from the dataset randomly for test.
 
-\subsection{Step 1: Extract image information (15 points)}
+\subsection{Step 1-1: Extract image information (15 points)}
 
 \begin{description}
 \item[Input] The input color image ($m \times n \times 3$ matrix), $m$ is the width of the input image, $n$ is the height of the input image.
 \item[Output] $m \times n$ matrix. 
-\item[Implementation] This step determines the regional feature you want to use in step 3, and you have two choices (choose at least one feature for this assignment):
+\item[Implementation] This step determines the regional feature you want to use in step 2, and you have two choices (choose at least one feature for this assignment):
 \begin{itemize}
 \item Color information
 \begin{itemize}
@@ -258,10 +258,10 @@ A simple dataset can be downloaded from the website\footnote{\url{http://researc
 \item[-] You should compute the LBP value of each pixel here.  
 \end{itemize}
 \end{itemize}
-\item[Hint] The extraction of color/texture information can refer to the matlab code from the website\footnote{\url{http://jianghz.com/projects/saliency_drfi/index.html}}, which also contains the computation of color histogram and texture histogram of superpixels in step 3 and the conversion of superpixel saliency to pixel saliency in step 5.
+\item[Hint] The extraction of color/texture information can refer to the matlab code from the website\footnote{\url{http://jianghz.com/projects/saliency_drfi/index.html}}, which also contains the computation of color histogram and texture histogram of superpixels in step 2 and the conversion of superpixel saliency to pixel saliency in step 4.
 \end{description}
 
-\subsection{Step 2: Segment the input image to superpixels (20 points)}
+\subsection{Step 1-2: Segment the input image to superpixels (20 points)}
 
 \begin{description}
 \item[Input] The input color image ($m \times n \times 3$ matrix), $m$ is the width of the input image, $n$ is the length of the input image. 
@@ -269,12 +269,12 @@ A simple dataset can be downloaded from the website\footnote{\url{http://researc
 \item[Hint] There are a lot of superpixel segmentation algorithms, I recommend you to use SLIC\footnote{\url{http://www.vlfeat.org}}, which is fast and easy to implement.
 \end{description}
 
-\subsection{Step 3: Compute features of each superpixel (15 points)}
+\subsection{Step 2: Compute features of each superpixel (15 points)}
 
 \begin{description}
 \item[Input] Image information matrix, superpixel segmentation matrix. 
 \item[Output] $h$ histograms, $h$ is the number of superpixels after segmentation.
-\item[Implementation] You have two choices:
+\item[Implementation] The feature you choose here is based on the information you extracted in step 1-1:
 \begin{itemize}
 \item Compute color histogram feature of each superpixel, which means counting number of pixels for each color and store it in histogram's bins.
 \item Compute texture histogram feature of each superpixel
@@ -282,11 +282,11 @@ A simple dataset can be downloaded from the website\footnote{\url{http://researc
 \item[Hint] Useful function in matlab for histogram computation: \emph{hist}.
 \end{description}
 
-\subsection{Step 4: Compute superpixel feature contrast (20 points)}
+\subsection{Step 3: Compute superpixel feature contrast (20 points)}
 
 \begin{description}
 \item[Input] $h$ histograms.
-\item[Output] $h$ values, each value indicates the global feature contrast.
+\item[Output] $h$ values, each value indicates the global feature contrast of a superpixel.
 \item[Instructions] Saliency can be defined as uniqueness in terms of local or global regional contrast. For simplicity, I recommend you to compute global regional contrast, which means that the saliency of a superpixel should be computed as its feature contrast of all the other superpixels in the image. 
 \item[Theory] The formulation for histogram distance is as follows:
 \begin{align}
@@ -295,15 +295,15 @@ A simple dataset can be downloaded from the website\footnote{\url{http://researc
 where $\textbf{h}_1$ and $\textbf{h}_2$ are color histograms of two distinct regions,  $h_{1i}$ and $h_{2i}$ are the $i$th component of $\textbf{h}_1$ and $\textbf{h}_2$ respectively, $b$ is the number of histogram bins. Moreover, both histograms are normalized, i.e. their entries sum up to one.
 \end{description}
 
-\subsection{Step 5: Convert superpixel saliency to pixel saliency (15 points)}
+\subsection{Step 4: Convert superpixel saliency to pixel saliency (15 points)}
 
 \begin{description}
 \item[Input] $h$ values, superpixel segmentation matrix.
-\item[Output] An initial saliency map (a grayscale map).
+\item[Output] An initial saliency map ($m \times n$ matrix).
 \item[Implementation] Assign all the pixels of the same superpixel the same saliency value. 
 \end{description}
 
-\subsection{Step 6: Use priors to enhance the result (15 points)}
+\subsection{Step 5: Use priors to enhance the result (15 points)}
 
 \begin{description}
 \item[Input] Initial saliency map,.
