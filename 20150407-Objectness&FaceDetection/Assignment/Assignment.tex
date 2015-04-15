@@ -211,41 +211,41 @@
 %\section{Programming problem: salient object detection}
 \section{Assignment requirement}
 
-For this assignment, you will implement a version of the Object detection technique. See Figure~\ref{fig: result} for an example.
+For this assignment, you will implement a version of the Object Detection technique. See Figure~\ref{fig:example} for an example.
 
 \begin{figure}[!ht]
   \centering 
   \subfigure[]{ 
-    \label{fig: result: a} %% label for first subfigure 
+    \label{fig:example:a} %% label for first subfigure 
     \includegraphics[height=0.15\textheight]{object}} 
   \subfigure[]{ 
-    \label{fig: result: b} %% label for second subfigure 
+    \label{fig:example:b} %% label for second subfigure 
     \includegraphics[height=0.15\textheight]{scene}} 
   \subfigure[]{ 
-    \label{fig: result: c} %% label for second subfigure 
+    \label{fig:example:c} %% label for second subfigure 
     \includegraphics[height=0.15\textheight]{Result}} 
   \caption{Object detection.}
-  \label{fig: result} %% label for entire figure 
+  \label{fig:example} %% label for entire figure 
 \end{figure}
 
-Your method must be Featuers2D-based, and at least one kind of Feature2D and matching strategy should be used. I will give you some tips for the implementation in the following sections.
+Your method must be Featuers2D-based, and at least one kind of Feature2D\footnote{Please refer to \url{http://docs.opencv.org/modules/features2d/doc/features2d.html}.} and matching strategy should be used. I will give you some tips for the implementation in the following sections.
 
 \section{Tips}
 
-The whole framework of the implementation for object detection is shown in Figure~\ref{fig: framework}, it may serve as a reference for your assignment. Next, I will introduce the implementation and requirement of each part of the framework for you.
+The whole framework of the implementation for object detection is shown in Figure~\ref{fig:framework}, it may serve as a reference for your assignment. Next, I will introduce the implementation and requirement of each part of the framework for you.
 
 \begin{figure}[!ht]
 \centering
 \includegraphics[height=0.6\textheight]{framework.png}
 \caption{Framework of the implementation for object detection.}
-\label{fig: framework}
+\label{fig:framework}
 \end{figure}
 
-\subsection{Step 1: Input image(5 points)}
+\subsection{Step 1: Input image}
 
 The object image and scene image is given. Firstly, you should input the two images.
 
-\subsection{Step 2: Color space conversion (10 points)}
+\subsection{Step 2: Color space conversion (5 points)}
 
 \begin{description}
 \item[Input] The input color image ($m \times n \times 3$ matrix), $m$ is the width of the input image, $n$ is the height of the input image.
@@ -259,17 +259,17 @@ The object image and scene image is given. Firstly, you should input the two ima
 \item[Input] The gray image ($m \times n \times 1$ matrix), $m$ is the width of the input image, $n$ is the length of the input image. 
 \item[Output]  Keypoints of object image and scene image. 
 \item[Implementation] Detect the keypoints using Features2D Detector and store the result.
-\item[Hint] There are lots of Features2D detection algorithms, such as SIFT,SURF and so on. You can choose one of them which is fast and easy to implement.
+\item[Hint] There are lots of Features2D detection algorithms, such as SIFT, SURF and so on. You can choose one of them which is fast and easy to implement.
 \begin{figure}[!ht]
   \centering 
   \subfigure[]{ 
-    \label{fig: result: a} %% label for first subfigure 
+    \label{fig:Features2D:a} %% label for first subfigure 
     \includegraphics[height=0.15\textheight]{Feature_Detection_Result_a.jpg}} 
   \subfigure[]{ 
-    \label{fig: result: b} %% label for second subfigure 
+    \label{fig:Features2D:b} %% label for second subfigure 
     \includegraphics[height=0.15\textheight]{Feature_Detection_Result_b.jpg}} 
   \caption{Features2D detection.}
-  \label{fig: Features2D detection} %% label for entire figure 
+  \label{fig:Features2D} %% label for entire figure 
 \end{figure}
 \end{description}
 
@@ -281,18 +281,18 @@ The object image and scene image is given. Firstly, you should input the two ima
 \item[Implementation] Descriptors of the keypoints in the object image are stored in one Matrix and descriptors of the keypoints in the scene image are stored in another Matrix.
 \end{description}
 
-\subsection{Step 5: Match descriptors (15 points)}
+\subsection{Step 5: Match descriptors (20 points)}
 
 \begin{description}
 \item[Input] One matrix describes the keypoints in the object image and one matrix describes the keypoints in the scene image.
 \item[Output] $M$ good matched keypoints between object image and scene image.
-\item[Implementation]
+\item[Implementation] \mbox{}
 \begin{itemize}
-\item Step 5-1: You should quick calculate $x \times y$ ($x$ , $y$ are the number of keypoints) distances(value) between keypoints, each value indicates the similarity of one keypoint from object image and one keypoint from scene image.
+\item Step 5-1: You should quick calculate $x \times y$ ($x$, $y$ are the number of keypoints) distances (value) between keypoints, each value indicates the similarity of one keypoint from object image and one keypoint from scene image.
 \item Step 5-2: Fix one keypoint from object image and select the min or max distance between the keypoint and one keypoint from scene image to find the best match,then change the fixed keypoint and do the same.
-\item Step 5-3: You should draw only "good" matches (i.e. whose distance is less than 3*mindistance).
+\item Step 5-3: You should draw only ``good'' matches (i.e. whose distance is less than $3*\min(distance)$).
 \end{itemize}   
-\item[Hint] There are lots of distance calculation algorithms, such as Hausdorff Distance,Euclidean Distance and so on. You can choose one of them to calculate the similarity between two keypoints and find the best match.
+\item[Hint] There are lots of distance calculation algorithms, such as Hausdorff Distance, Euclidean Distance and so on. You can choose one of them to calculate the similarity between two keypoints and find the best match.
 \begin{figure}[!ht]
   \centering 
   \subfigure[]{ 
@@ -306,12 +306,12 @@ The object image and scene image is given. Firstly, you should input the two ima
 \end{figure}
 \end{description}
 
-\subsection{Step 6: Find homography transformation (15 points)}
+\subsection{Step 6: Find homography transformation (20 points)}
 
 \begin{description}
 \item[Input] Keypoints of object image and scene image.
 \item[Output] Matrix of homography transformation between two different point sets.
-\item[Implementation]
+\item[Implementation] \mbox{}
 \begin{itemize}
 \item Step 6-1: Get $N$ keypoints from the good matches and store them in two different point sets.
 \item Step 6-2: Calculate the matrix of homography transformation between the two different point sets.
@@ -330,14 +330,14 @@ The object image and scene image is given. Firstly, you should input the two ima
 \subsection{Step 8: Localize the object (10 points)}
 
 \begin{description}
-\item[Input] The scene image which has four points(the mapped object in the scene image).
+\item[Input] The scene image which has four points (the mapped object in the scene image).
 \item[Output] The matrix box in the scene image which contains the object in object image.
 \item[Implementation] Draw lines between the four points (the mapped object in the scene image).
 \begin{figure}[!ht]
 \centering
 \includegraphics[height=0.3\textheight]{Result.jpg}
 \caption{Localize the object.}
-\label{fig: Localize the object}
+\label{fig:localize}
 \end{figure}
 \end{description}
 
@@ -347,11 +347,12 @@ The object image and scene image is given. Firstly, you should input the two ima
 \subsection{What to hand in?}
 
 \begin{itemize}
-\item Your matlab code or C/C++ code (Show your medial result in your code)
-\item A report containing the following:
+\item Your matlab code or C/C++ code (show the result of each step in your code)
+\item A ``Readme'' file to illustrate how to run your code
+\item A report containing the following items:
 \begin{itemize}
-\item Your name at the top
-\item A brief explanation of your implementation strategy (in English)
+\item The title and your name at the top
+\item A brief explanation of your implementation strategy corresponding to each step (in English)
 \end{itemize}
 \end{itemize}
 
