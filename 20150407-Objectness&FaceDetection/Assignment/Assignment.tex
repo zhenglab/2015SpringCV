@@ -198,9 +198,9 @@
 %%---------------------------------------------------------------------
 % \titlepage
 \title{\vspace{-2em}CV2015Spring---Assignment \#\textbf{2}\\
-\normalsize{Due: Thursday, Apr 15 10:00 AM}}
+\normalsize{Due: Thursday, Apr 30 10:00 AM}}
 \author{Zhao Haiwei}
-\date{\vspace{-0.7em}April 15, 2015\vspace{-0.7em}}
+\date{\vspace{-0.7em}Apr 16, 2015\vspace{-0.7em}}
 %%---------------------------------------------------------------------
 \maketitle\thispagestyle{fancy}
 %%---------------------------------------------------------------------
@@ -259,7 +259,7 @@ The object image and scene image is given. Firstly, you should input the two ima
 \item[Input] The gray image ($m \times n \times 1$ matrix), $m$ is the width of the input image, $n$ is the length of the input image. 
 \item[Output]  Keypoints of object image and scene image. 
 \item[Implementation] Detect the keypoints using Features2D Detector and store the result.
-\item[Hint] There are lots of Features2D detection algorithms, such as SIFT, SURF and so on. You can choose one of them which is fast and easy to implement.
+\item[Hint] There are lots of Features2D detection algorithms, such as SIFT, SURF, and so on. You can choose one of them which is fast and easy to implement.
 \begin{figure}[!ht]
   \centering 
   \subfigure[]{ 
@@ -292,7 +292,7 @@ The object image and scene image is given. Firstly, you should input the two ima
 \item Step 5-2: Fix one keypoint from object image and select the min or max distance between the keypoint and one keypoint from scene image to find the best match,then change the fixed keypoint and do the same.
 \item Step 5-3: You should draw only ``good'' matches (i.e. whose distance is less than $3*\min(distance)$).
 \end{itemize}   
-\item[Hint] There are lots of distance calculation algorithms, such as Hausdorff Distance, Euclidean Distance and so on. You can choose one of them to calculate the similarity between two keypoints and find the best match.
+\item[Hint] There are lots of distance calculation algorithms, such as Hausdorff Distance, Euclidean Distance, and so on. You can choose one of them to calculate the similarity between two keypoints and find the best match.
 \begin{figure}[!ht]
   \centering 
   \subfigure[]{ 
@@ -319,7 +319,7 @@ The object image and scene image is given. Firstly, you should input the two ima
 \item[Hint] There are lots of mapping transformation algorithms, I recommend you to use homography transformation.
 \end{description}
 
-\subsection{Step 7: Perspective transform (15 points)}
+\subsection{Step 7: Perspective transform (20 points)}
 
 \begin{description}
 \item[Input] Four corners of object image.
@@ -327,7 +327,7 @@ The object image and scene image is given. Firstly, you should input the two ima
 \item[Implementation] You can use the matrix of homography transformation which was got in Step 6 to perspective transform the four corners of object image to four points of scene image.
 \end{description}
 
-\subsection{Step 8: Localize the object (10 points)}
+\subsection{Step 8: Localize the object (5 points)}
 
 \begin{description}
 \item[Input] The scene image which has four points (the mapped object in the scene image).
