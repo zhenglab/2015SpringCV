@@ -1,0 +1,32 @@
+Note:
+1.The program consists of five files: 
+main.cpp   Quantize.cpp   SuperPixel_Seg.cpp   Compare_Hist.cpp   Center_prior.cpp
+
+2.The code is run with Code::Blocks 13.12 on 64-bit Ubuntu 14.02 system, based on the library of opencv-3.0.0-beta and opencv_contrib.
+
+3.You need create a new project and add this five files. Then, build and run the project.
+
+4.You also can use the terminal to change into directory of the project to run the code. 
+
+```
+$ cd <code_source_directory>/bin/Debug
+$ ./saliency <filename_source_image>
+```
+
+
+PS:
+1.Necessary Library:  		
+opencv-3.0.0-beta and opencv_contrib
+
+2.Recommended Environment: 		
+IDE: Code::Blocks 13.12 	
+Operating System: Ubuntu 14.04
+
+3.If you run the code with only one parameters, the default filename of the input image is "origin_image.jpg" and the
+image must save in your project directory.
+
+
+
+
+
+
