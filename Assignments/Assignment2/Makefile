@@ -1,10 +1,11 @@
-TeXFileName = Assignment
+TeXFileName = Assignment2
 
 sources = ${TeXFileName}.tex
 
 pdf: ${TeXFileName}.pdf
 
 ${TeXFileName}.pdf: ${sources}
+	xelatex ${TeXFileName}.tex
 	xelatex ${TeXFileName}.tex
 	xelatex ${TeXFileName}.tex
 #	bibtex ${TeXFileName}
