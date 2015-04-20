@@ -23,7 +23,7 @@ This is my procedure to my class's assignment, you will see the assignment requi
 >* ContrastSaliency.cpp
 >* CenterPrior.cpp
 
-The fist is the main function and the other 4 are subfunctions.
+The first is the main function and the other 4 are subfunctions.
 
 You need create a new project use Xcode and add this five files. Then, build and run the project.
 
