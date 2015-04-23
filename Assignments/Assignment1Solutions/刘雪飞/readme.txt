@@ -1,0 +1,1 @@
+The code should run at matlab 7.0 or advanced version. Besides, VL_FEAT-0.9.20 database is needed.
