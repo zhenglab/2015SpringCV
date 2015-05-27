@@ -252,15 +252,16 @@ Cluster similar pixel features together.\newline
 
 \subsection{K-means++}
 \begin{frame}
-\frametitle{K-means++}
+\frametitle{K-means++\footnote{Arthur, D. and Vassilvitskii, S, ``K-means++: The Advantages of Careful Seeding'', PA, 2007.}}
 {\color{blue}Algorithm:}
     \begin{enumerate}
       \item Take one center $c_{1}$, chosen uniformly at random from $X$.
-      \item Take a new center $c_{i}$, choosing $x \in X$ with probability $\frac{D(x)^{2}}{\sum_{x \in X}D(x)^{2}}$
-      \item Repeat Step 1, until we have taken $k$ centers altogether.\newline
+      \item Take a new center $c_{i}$, choosing $x \in X$ with probability $\frac{D(x)^{2}}{\sum_{x \in X}D(x)^{2}}$.
+      \item Repeat Step2, until we have taken $k$ centers altogether.
+      \item Proceed as with the standard K-means algorithm.\newline
       
     \end{enumerate}
-    ~~~~$D(x)$ denote the shortest distance from a data point to the closest center.
+    ~~~~$D(x)$ denote the shortest distance from a data point to the closest center we have already chosen.
 \end{frame}
 
 \begin{frame}
