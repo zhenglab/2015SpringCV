@@ -1,0 +1,31 @@
+Note:
+1.The program consists of only one files: 
+main.cpp 
+
+2.The code is run with Code::Blocks 13.12 on 64-bit Ubuntu 14.02 system, based on the library of opencv-3.0.0-beta and opencv_contrib.
+
+3.You need create a new project and build the project.
+
+4.You need use the terminal to  to run the code. 
+
+```
+$ cd <code_source_directory>/bin/Debug
+$ ./<execute file> <filename_object_source_image> <filename_scene_source_image>
+```
+
+
+PS:
+1.Necessary Library:  		
+opencv-3.0.0-beta and opencv_contrib
+
+2.Recommended Environment: 		
+IDE: Code::Blocks 13.12 	
+Operating System: Ubuntu 14.04
+
+3.The code need two parameters to run successfully. The first parameter means the object image and the second parameter means the scene image.
+
+
+
+
+
+

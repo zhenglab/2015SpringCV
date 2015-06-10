@@ -1,0 +1,1 @@
+My program is writen in C++. It can be run with OpenCV2.4.8 in VisualStudio 2010.And the path of object image and scene image must be E:/object.jpg and E:/scene.jpg.
