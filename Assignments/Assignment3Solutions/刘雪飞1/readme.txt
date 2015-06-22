@@ -1,0 +1,1 @@
+this code can be run on the matlab2014a, We provide a freely available Segmentation Toolbox that can readily be used for image segmentation tasks.

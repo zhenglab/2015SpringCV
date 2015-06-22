@@ -1,0 +1,20 @@
+Description:
+This fold contains a program for signature, grab cut and evaluation.
+
+Operating System:
+Ubuntu 14.04 x64
+
+IDE:
+MATLAB_R2013a Code::Blocks 
+
+The package contains:
+Three folders: Size, Threshold and Times 
+
+Run:
+1.Run Batch_Size.sh in "Size" folder. You can obtain saliency maps, segmentation resuls and evaluations.
+2.Run Batch_Threshold.sh in "Threshold" folder. You can obtain saliency maps, segmentation resuls and evaluations.
+3.Run Batch_Times.sh in "Times" folder. You can obtain saliency maps, segmentation resuls and evaluations.
+
+Notes:
+You must change the input file path according to your images and code paths, in every BatchProcessing.m and BatchProcessing.sh from three folders.
+

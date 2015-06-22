@@ -1,0 +1,1 @@
+My program of GrabCut can be run under the environment of VS2010 with OpenCV2.3.8 and matlab r2011b, and the program of Meanshif can be run under the environment of matlab r2011b.

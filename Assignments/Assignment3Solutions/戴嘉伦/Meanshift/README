@@ -1,0 +1,19 @@
+Description:
+This fold contains a program for mean shift and evaluation.
+
+Operating System:
+Ubuntu 14.04 x64
+
+IDE:
+MATLAB_R2013a 
+
+
+The package contains:
+Two folders: Hs and Hr
+
+Run:
+1.Run Batch_Hs.m and Eva_Hs.m in "Hs" folder.
+2.Run Batch_Hr.m and Eva_Hr.m in "Hr" folder.
+
+Notes:
+You must change the input file path according to your images paths, in Batch_Hs.m, Eva_Hs.m, Batch_Hr.m and Eva_Hr.m from three folders.

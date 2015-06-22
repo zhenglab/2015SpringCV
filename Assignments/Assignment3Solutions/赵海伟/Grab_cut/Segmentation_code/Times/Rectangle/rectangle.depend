@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1433004380 source:/home/white_ghoul/tmp/rectangle/main.cpp
+	<iostream>
+	<cv.hpp>
+	<highgui.hpp>
+	<features2d/features2d.hpp>
+	<xfeatures2d.hpp>
+	<core.hpp>
+
+1433043836 source:/home/white_ghoul/tmp/Sig_Grab/rectangle/main.cpp
+	<iostream>
+	<cv.hpp>
+	<highgui.hpp>
+	<features2d/features2d.hpp>
+	<xfeatures2d.hpp>
+	<core.hpp>
+	<imgproc.hpp>
+	<imgcodecs.hpp>
+
+1433297647 source:/home/white_ghoul/tmp/Sig_Grab/Rectangle/main.cpp
+	<iostream>
+	<cv.hpp>
+	<highgui.hpp>
+	<core.hpp>
+
+1433297646 source:/home/dai/tmp/Sig_Grab/Rectangle/main.cpp
+	<iostream>
+	<cv.hpp>
+	<highgui.hpp>
+	<core.hpp>
+
